@@ -22,13 +22,13 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
 
-  <!-- Twitter -->
+  <!-- Twitter
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="GhostPrefix: Universal, Sync-Free Audio Adversarial Prefix Attacks on ASR">
   <meta name="twitter:description" content="A universal, synchronization-free, stealthy adversarial prefix that hijacks streaming ASR and downstream AI pipelines.">
-  <meta name="twitter:image" content="static/images/GhostPrefix.png">
+  <meta name="twitter:image" content="static/images/GhostPrefix.png"> -->
 
-  <title>GhostPrefix: Synchronization-Free, Universal, Stealthy, and Versatile Audio Adversarial Prefix Attacks on ASR</title>
+  <title>GhostPrefix: Synchronization-Free, Universal Prefix Attacks for ASR Manipulation</title>
 
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link rel="apple-touch-icon" href="static/images/favicon.ico">
@@ -123,8 +123,7 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <h1 class="title is-1 publication-title">
-              GhostPrefix: Synchronization-Free, Universal, Stealthy, and Versatile<br>
-              Audio Adversarial Prefix Attacks on ASR
+              GhostPrefix: Synchronization-Free, Universal Prefix Attacks for ASR Manipulation
             </h1>
 
             <div class="is-size-5 publication-authors">
@@ -159,7 +158,7 @@
                   </a>
                 </span>
                 <span class="link-block">
-                  <a href="https://anonymous.4open.science/r/GhostPrefix." target="_blank"
+                  <a href="https://anonymous.4open.science/r/GhostPrefix/README.md" target="_blank"
                      class="external-link button is-normal is-rounded is-dark">
                     <span class="icon"><i class="fab fa-github"></i></span>
                     <span>Code</span>
@@ -178,7 +177,7 @@
     <div class="container is-max-desktop">
       <div class="hero-body">
         <figure>
-          <img src="static/images/threat_scenario.png" alt="GhostPrefix threat scenario overview"
+          <img src="static/images/threat scenario v2.pdf" alt="GhostPrefix threat scenario overview"
                style="width:100%; max-height:520px; object-fit:contain;">
           <figcaption class="figure-caption">
             <strong>Figure 1.</strong> Threat scenario for <em>GhostPrefix</em>'s adversarial prefix attacks against streaming ASR.
@@ -248,7 +247,7 @@
       <div class="columns is-vcentered">
         <div class="column is-half">
           <figure>
-            <img src="static/images/Workflow.png" alt="GhostPrefix optimization workflow" style="width:100%;">
+            <img src="static/images/threat scenario v2.pdf" alt="GhostPrefix optimization workflow" style="width:100%;">
             <figcaption class="figure-caption">
               <strong>Figure 2.</strong> Optimization workflow: a universal prefix is trained over a corpus of carrier
               utterances under EOT-modeled acoustic transforms (jitter, RIR, band-limiting, additive noise) and
@@ -258,7 +257,7 @@
         </div>
         <div class="column is-half">
           <figure>
-            <img src="static/images/Ghost_Prefix.png" alt="Prefix-at-the-boundary paradigm" style="width:100%;">
+            <img src="static/images/Ghost Prefix.pdf" alt="Prefix-at-the-boundary paradigm" style="width:100%;">
             <figcaption class="figure-caption">
               <strong>Figure 3.</strong> The <em>prefix-at-the-boundary</em> paradigm: instead of overlaying a perturbation
               onto an aligned victim waveform, GhostPrefix is concatenated at the streaming pipeline's input boundary,
@@ -277,20 +276,20 @@
 
       <div class="scenario-grid" style="margin-top:1.5rem;">
         <div class="scenario-card">
-          <img src="static/images/Prompted_Attack.png" alt="Prompted prefix attack diagram">
+          <img src="static/images/Prompted Attack.pdf" alt="Prompted prefix attack diagram">
           <h4><span class="mode-tag prompted">Prompted</span></h4>
           <p>Prepends an attacker-chosen <em>semantic cue</em> (e.g., a fake instruction or framing phrase)
             while leaving the rest of the transcript intact. Average ASR-Suc: <strong>97.6&#8201;%</strong>,
             PP-WER: <strong>0.082</strong>.</p>
         </div>
         <div class="scenario-card">
-          <img src="static/images/Targeted_Attack.png" alt="Targeted prefix attack diagram">
+          <img src="static/images/Targeted Attack.pdf" alt="Targeted prefix attack diagram">
           <h4><span class="mode-tag targeted">Targeted</span></h4>
           <p>Forces ASR output to an attacker-specified transcript regardless of the carrier speech.
             Average ASR-Suc: <strong>93.4&#8201;%</strong>.</p>
         </div>
         <div class="scenario-card">
-          <img src="static/images/Untargeted_Attack.png" alt="Untargeted prefix attack diagram">
+          <img src="static/images/Untargeted Attack.pdf" alt="Untargeted prefix attack diagram">
           <h4><span class="mode-tag untargeted">Untargeted</span></h4>
           <p>Broadly degrades transcription quality by maximizing divergence in the encoder's latent space.
             Average WER: <strong>1.18</strong>.</p>
@@ -304,7 +303,7 @@
     <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered">Coverage: 13 ASR Models &times; 4 Architecture Families</h2>
       <figure>
-        <img src="static/images/ASR_Architecture.png" alt="ASR architecture families covered by GhostPrefix"
+        <img src="static/images/ASR_Architecture.pdf" alt="ASR architecture families covered by GhostPrefix"
              style="width:100%; max-height:420px; object-fit:contain;">
         <figcaption class="figure-caption">
           <strong>Figure 4.</strong> GhostPrefix is evaluated against four representative ASR families:
@@ -432,7 +431,7 @@
       <div class="columns is-vcentered">
         <div class="column is-half">
           <figure>
-            <img src="static/images/Live_Human_Speech.png" alt="Live human speech attack setup" style="width:100%;">
+            <img src="static/images/Live Human Speech.pdf" alt="Live human speech attack setup" style="width:100%;">
             <figcaption class="figure-caption">
               <strong>Figure 5.</strong> Live-speech attack: human speaks naturally; the loudspeaker emits the
               0.5&nbsp;s GhostPrefix at the moment the speech turn begins, validating the synchronization-free property.
@@ -464,7 +463,7 @@
       <div class="columns" style="margin-top:1.5rem;">
         <div class="column is-half">
           <figure>
-            <img src="static/images/smart_voice_assistant.png" alt="Voice assistant downstream attack" style="width:100%;">
+            <img src="static/images/smart voice assistant.png" alt="Voice assistant downstream attack" style="width:100%;">
             <figcaption class="figure-caption">
               <strong>Case A:</strong> Voice-assistant + LLM QA chatbot.
             </figcaption>
@@ -472,7 +471,7 @@
         </div>
         <div class="column is-half">
           <figure>
-            <img src="static/images/AI_Notetaking.png" alt="AI note-taking downstream attack" style="width:100%;">
+            <img src="static/images/AI Notetaking.png" alt="AI note-taking downstream attack" style="width:100%;">
             <figcaption class="figure-caption">
               <strong>Case B:</strong> AI note-taking system summarizing a manipulated meeting transcript.
             </figcaption>
