@@ -205,34 +205,16 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Automatic speech recognition (ASR) has become a foundational component of modern intelligent audio
-              systems, powering voice assistants, live captioning, meeting transcription, and a rapidly growing set of
-              downstream applications such as question-answering chatbots and AI note-taking tools.
-              Existing audio adversarial attacks against ASR are crafted per&#8209;utterance, applied additively over the
-              full carrier, and tightly synchronized with the victim waveform &mdash; assumptions that all break down in
-              realistic streaming scenarios where neither the speech content nor its precise timing is known at attack time.
+              We present <strong>GhostPrefix</strong>, the first synchronization-free, universal, general-purpose adversarial prefix attack against automatic speech recognition (ASR) systems. Unlike prior audio adversarial attacks, which are typically crafted per utterance, require tight synchronization with the victim waveform, and are often constrained to narrow, predefined objectives, GhostPrefix learns a short, reusable audio segment that is prepended to arbitrary live speech streams to exert general-purpose, real-time control over ASR outputs, without any knowledge of the future utterance and without temporal alignment. This prefix-at-the-boundary paradigm goes beyond existing perturbation designs and extends adversarial reach from isolated command classifiers to the downstream applications.
             </p>
             <p>
-              We present <strong>GhostPrefix</strong>, the first <em>universal</em>, <em>synchronization&#8209;free</em>,
-              <em>general&#8209;purpose</em> adversarial prefix attack against ASR. GhostPrefix learns a short
-              (default 0.5&nbsp;s), reusable audio prefix that is concatenated at the input boundary of the streaming
-              pipeline, exerting real&#8209;time control over ASR outputs without temporal alignment or knowledge of the
-              upcoming utterance. A unified optimization framework supports three attack modes &mdash;
-              <strong>prompted</strong> (semantic steering), <strong>targeted</strong> (transcript hijacking), and
-              <strong>untargeted</strong> (broad degradation) &mdash; combining standard token&#8209;level objectives
-              with a novel representation&#8209;level objective that maximizes divergence in the encoder's latent space.
-              Expectation&#8209;over&#8209;transformation (EOT) training and environmental&#8209;sound regularization make
-              the prefix robust over&#8209;the&#8209;air and perceptually inconspicuous.
+              However, it faces a critical challenge: the learned prefix must maintain stable adversarial effects across unknown and continuously evolving speech context. To address this, GhostPrefix adopts a unified optimization framework that combines both standard token-level loss functions and a novel representation-level objective to produce stable, input-agnostic adversarial effects across arbitrary speech. Within this framework, GhostPrefix supports three attack modes: (i) <strong>prompted prefix attacks</strong> for semantic steering, (ii) <strong>targeted prefix attacks</strong> for transcript hijacking, and (iii) <strong>untargeted prefix attacks</strong> for general transcription degradation. To remain perceptually inconspicuous, we regularize the adversarial prefixes toward benign environmental-sound distributions and further robustify them against over-the-air distortions.
             </p>
             <p>
-              We evaluate GhostPrefix on <strong>13 widely deployed open&#8209;source ASR models from 4 representative
-              families</strong> (CTC, encoder&ndash;decoder, large&#8209;scale CTC, and LLM&#8209;augmented decoders).
-              In digital settings, GhostPrefix achieves <strong>97.6&#8201;% average attack success rate</strong>
-              for prompted semantic steering and <strong>93.4&#8201;%</strong> for targeted hijacking, while driving the
-              word error rate to <strong>1.18</strong> under untargeted attacks. Over&#8209;the&#8209;air, it sustains
-              <strong>84.1&#8201;%</strong> and <strong>79.5&#8201;%</strong> success for prompted and targeted modes
-              respectively. We further show that prefix&#8209;induced manipulations propagate into AI&#8209;assisted
-              downstream pipelines such as QA chatbots and AI note&#8209;taking tools.
+              We evaluate GhostPrefix across <strong>13 widely deployed open-sourced ASR models from 4 representative families</strong>. In digital settings, GhostPrefix achieves an average attack success rate of <strong>97.6%</strong> for prompted semantic steering and <strong>93.4%</strong> for targeted hijacking, while driving the word error rate to <strong>1.18</strong> under untargeted attacks. In over-the-air conditions, it sustains robust performance with success rates of <strong>91.5%</strong> and <strong>89.5%</strong> for prompted and targeted modes, respectively. The induced manipulations further propagate into downstream AI-assisted pipelines such as voice assistants and AI note-taking tools, causing systematic semantic misinterpretations. 
+            </p>
+            <p>
+              GhostPrefix exposes synchronization-free universal prefixes as a practical, under-explored threat to real-world ASR and the associated applications.
             </p>
           </div>
         </div>
@@ -288,7 +270,7 @@
   <section class="section hero is-light" id="modes">
     <!-- 注意：这里的 is-max-desktop 限制了最大宽度。如果你希望它真正的“全屏”宽，可以把这行改为 <div class="container is-fluid"> 或直接去掉 class="container is-max-desktop" -->
     <div class="container is-max-desktop">
-      <h2 class="title is-3 has-text-centered">Three Attack Modes, One Universal Prefix</h2>
+      <h2 class="title is-3 has-text-centered">Three Attack Modes, One Unified Framework</h2>
 
       <!-- 去掉了 align-items: center，使子元素默认撑满宽度 -->
       <div class="scenario-grid" style="margin-top:1.5rem; display: flex; flex-direction: column; gap: 2rem;">
