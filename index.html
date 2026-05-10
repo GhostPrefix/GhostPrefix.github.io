@@ -241,31 +241,18 @@
   </section>
 
   <!-- ============================ SYSTEM OVERVIEW ============================ -->
+
   <section class="section">
     <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered">System Overview</h2>
-      <div class="columns is-vcentered">
-        <div class="column is-half">
-          <figure>
-            <img src="static/images/threat scenario v2.svg" alt="GhostPrefix optimization workflow" style="width:100%;">
-            <figcaption class="figure-caption">
-              <strong>Figure 2.</strong> Optimization workflow: a universal prefix is trained over a corpus of carrier
-              utterances under EOT-modeled acoustic transforms (jitter, RIR, band-limiting, additive noise) and
-              regularized toward a benign environmental-sound template (notification chime, white noise, or car horn).
-            </figcaption>
-          </figure>
-        </div>
-        <div class="column is-half">
-          <figure>
-            <img src="static/images/Ghost Prefix.svg" alt="Prefix-at-the-boundary paradigm" style="width:100%;">
-            <figcaption class="figure-caption">
-              <strong>Figure 3.</strong> The <em>prefix-at-the-boundary</em> paradigm: instead of overlaying a perturbation
-              onto an aligned victim waveform, GhostPrefix is concatenated at the streaming pipeline's input boundary,
-              eliminating any synchronization assumption.
-            </figcaption>
-          </figure>
-        </div>
-      </div>
+      <figure>
+        <img src="static/images/Ghost Prefix.svg" alt="GhostPrefix optimization workflow" style="width:100%;">
+        <figcaption class="figure-caption">
+          <strong>Figure 2.</strong> Overview of the GHOSTPREFIX framework: A universal adversarial prefix is prepended to live speech inputs to launch
+          synchronization-free attacks against streaming ASR systems. The attack is designed to be stealthy and over-the-air robust,
+          enabling semantic steering, transcript hijacking, and system degradation in real-world scenarios.
+        </figcaption>
+      </figure>
     </div>
   </section>
 
@@ -302,46 +289,31 @@
     <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered">Three Attack Modes, One Universal Prefix</h2>
 
-      <!-- 使用 Bulma 的 columns 容器 -->
-      <div class="columns is-multiline" style="margin-top:1.5rem;">
+      <!-- 在 style 中添加了 display: flex; flex-direction: column; gap: 2rem; 以实现列向排布 -->
+      <div class="scenario-grid" style="margin-top:1.5rem; display: flex; flex-direction: column; gap: 2rem; align-items: center;">
         
-        <!-- 第一列: Prompted -->
-        <div class="column is-4">
-          <div class="scenario-card has-text-centered">
-            <figure class="image" style="margin-bottom: 1rem;">
-              <img src="static/images/Prompted Attack.svg" alt="Prompted prefix attack diagram">
-            </figure>
-            <h4><span class="mode-tag prompted">Prompted</span></h4>
-            <p>Prepends an attacker-chosen <em>semantic cue</em> (e.g., a fake instruction or framing phrase) 
-               while leaving the rest of the transcript intact. Average ASR-Suc: <strong>97.6%</strong>, 
-               PP-WER: <strong>0.082</strong>.</p>
-          </div>
+        <div class="scenario-card" style="max-width: 600px;">
+          <img src="static/images/Prompted Attack.svg" alt="Prompted prefix attack diagram">
+          <h4><span class="mode-tag prompted">Prompted</span></h4>
+          <p>Prepends an attacker-chosen <em>semantic cue</em> (e.g., a fake instruction or framing phrase)
+            while leaving the rest of the transcript intact. Average ASR-Suc: <strong>97.6&#8201;%</strong>,
+            PP-WER: <strong>0.082</strong>.</p>
         </div>
-
-        <!-- 第二列: Targeted -->
-        <div class="column is-4">
-          <div class="scenario-card has-text-centered">
-            <figure class="image" style="margin-bottom: 1rem;">
-              <img src="static/images/Targeted Attack.svg" alt="Targeted prefix attack diagram">
-            </figure>
-            <h4><span class="mode-tag targeted">Targeted</span></h4>
-            <p>Forces ASR output to an attacker-specified transcript regardless of the carrier speech. 
-               Average ASR-Suc: <strong>93.4%</strong>.</p>
-          </div>
+        
+        <div class="scenario-card" style="max-width: 600px;">
+          <img src="static/images/Targeted Attack.svg" alt="Targeted prefix attack diagram">
+          <h4><span class="mode-tag targeted">Targeted</span></h4>
+          <p>Forces ASR output to an attacker-specified transcript regardless of the carrier speech.
+            Average ASR-Suc: <strong>93.4&#8201;%</strong>.</p>
         </div>
-
-        <!-- 第三列: Untargeted -->
-        <div class="column is-4">
-          <div class="scenario-card has-text-centered">
-            <figure class="image" style="margin-bottom: 1rem;">
-              <img src="static/images/Untargeted Attack.svg" alt="Untargeted prefix attack diagram">
-            </figure>
-            <h4><span class="mode-tag untargeted">Untargeted</span></h4>
-            <p>Broadly degrades transcription quality by maximizing divergence in the encoder's latent space. 
-               Average WER: <strong>1.18</strong>.</p>
-          </div>
+        
+        <div class="scenario-card" style="max-width: 600px;">
+          <img src="static/images/Untargeted Attack.svg" alt="Untargeted prefix attack diagram">
+          <h4><span class="mode-tag untargeted">Untargeted</span></h4>
+          <p>Broadly degrades transcription quality by maximizing divergence in the encoder's latent space.
+            Average WER: <strong>1.18</strong>.</p>
         </div>
-
+        
       </div>
     </div>
   </section>
