@@ -286,13 +286,15 @@
   </section>
 <!-- ============================ THREE ATTACK MODES ============================ -->
   <section class="section hero is-light" id="modes">
+    <!-- 注意：这里的 is-max-desktop 限制了最大宽度。如果你希望它真正的“全屏”宽，可以把这行改为 <div class="container is-fluid"> 或直接去掉 class="container is-max-desktop" -->
     <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered">Three Attack Modes, One Universal Prefix</h2>
 
-      <!-- 在 style 中添加了 display: flex; flex-direction: column; gap: 2rem; 以实现列向排布 -->
-      <div class="scenario-grid" style="margin-top:1.5rem; display: flex; flex-direction: column; gap: 2rem; align-items: center;">
+      <!-- 去掉了 align-items: center，使子元素默认撑满宽度 -->
+      <div class="scenario-grid" style="margin-top:1.5rem; display: flex; flex-direction: column; gap: 2rem;">
         
-        <div class="scenario-card" style="max-width: 600px;">
+        <!-- 使用 width: 100% 让卡片填满父级容器 -->
+        <div class="scenario-card" style="width: 100%;">
           <img src="static/images/Prompted Attack.svg" alt="Prompted prefix attack diagram">
           <h4><span class="mode-tag prompted">Prompted</span></h4>
           <p>Prepends an attacker-chosen <em>semantic cue</em> (e.g., a fake instruction or framing phrase)
@@ -300,14 +302,14 @@
             PP-WER: <strong>0.082</strong>.</p>
         </div>
         
-        <div class="scenario-card" style="max-width: 600px;">
+        <div class="scenario-card" style="width: 100%;">
           <img src="static/images/Targeted Attack.svg" alt="Targeted prefix attack diagram">
           <h4><span class="mode-tag targeted">Targeted</span></h4>
           <p>Forces ASR output to an attacker-specified transcript regardless of the carrier speech.
             Average ASR-Suc: <strong>93.4&#8201;%</strong>.</p>
         </div>
         
-        <div class="scenario-card" style="max-width: 600px;">
+        <div class="scenario-card" style="width: 100%;">
           <img src="static/images/Untargeted Attack.svg" alt="Untargeted prefix attack diagram">
           <h4><span class="mode-tag untargeted">Untargeted</span></h4>
           <p>Broadly degrades transcription quality by maximizing divergence in the encoder's latent space.
